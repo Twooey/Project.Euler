@@ -23,7 +23,7 @@ int main(){
     We set it's value to a in the second loop. */
 
     for(a = 1; a < s / 3; a++){
-        for(b = a; b < s / 2; b++){
+        for(b = a + 1; b < s / 2; b++){
             c = s - a - b;
             if(a*a + b*b == c*c){
                 found = true;
