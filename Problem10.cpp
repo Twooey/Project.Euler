@@ -20,9 +20,7 @@ int main(){
             for(int b = 0; a*a+b*a < 2000000; ++b){
                     primes[a*a+b*a] = false;
             }
-
         }
-
     }
 //This simply add's all the prime numbers
     long long total = 0;
