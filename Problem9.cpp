@@ -22,7 +22,6 @@ int main(){
     It tests to see if it is a Pythagorean triplet. Since we know that b has to greater then A,
     We set it's value to a in the second loop. */
 
-
     for(a = 1; a < s / 3; a++){
         for(b = a; b < s / 2; b++){
             c = s - a - b;
@@ -36,7 +35,7 @@ int main(){
     }
 
     std::cout << a << "+" << b << "+" << c << "+" << a+b+c << " " << "\n"; //Verify conditions of problem are met.
-    std:: cout << a * b * c; // Display the Product of a+b+c
+    std::cout << a * b * c; // Display the Product of a+b+c
 
 return 0;
 }
