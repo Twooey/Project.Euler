@@ -35,7 +35,7 @@ int main(){
             break;
     }
 
-    std::cout << a << "+" << b << "+" << c << "+" << a+b+c << " " << "\n";
+    std::cout << a << "+" << b << "+" << c << "+" << a+b+c << " " << "\n"; //Verify conditions of problem are met.
     std:: cout << a * b * c; // Display the Product of a+b+c
 
 return 0;
