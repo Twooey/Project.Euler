@@ -54,7 +54,7 @@ int main(){
     std::cout << primeLCM << " is the prime LCM.\n";
     check = primeLCM;
 
-    //Check's if multples of the primeLCM are
+    //Check's if multples of the primeLCM are LCMS
     for(int c = 1; c  <= a; c++){
         if(check % c != 0){
             c = 1;
