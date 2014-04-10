@@ -32,36 +32,36 @@ int main(){
 
     int a = 0;
     long long check = 0;
-    long long primeLCM = 1; //needs to be set to 1. 
+    long long primeLCM = 1; //needs to be set to 1.
     std::vector<bool>primes;
 
     std::cout << "What is the smallest number this is evenly divisible by 1 and (up to 179): ";
     std::cin >> a;
     primes.resize(a,true); //resizing the primes array to the proper size.
 
-    
+
     isPrime(primes); //calculating primes
-    
-    //Putting all primes in a vector. This buy's some effeciency by 
+
+    //Putting all primes in a vector. This buy's some effeciency by
     //not checking if each number is a prime.
-    for(int b = 0; b < primes.size(); b++)
-    {
-        if(primes[b] == true)
-            std::cout << primes[b] << std::endl;
-            primeLCM *= primes[b];
+    for(int b = 0; b < primes.size(); b++){
+        if(primes[b] == true){
+            std::cout << b << "is a factor.\n";
+            primeLCM *= b;
+        }
     }
-    
-    std::cout << primeLCM << std::endl;
-    check = primeLCM; 
-    
-    //Check's if multples of the primeLCM are 
+
+    std::cout << primeLCM << " is the prime LCM.\n";
+    check = primeLCM;
+
+    //Check's if multples of the primeLCM are
     for(int c = 1; c  <= a; c++){
         if(check % c != 0){
             c = 1;
             check += primeLCM;
         }
     }
-    std::cout << check;
+    std::cout << check << " is the LCM of 1-" << a << ".\n" ;
 
     return 0;
 }
