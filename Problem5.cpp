@@ -6,8 +6,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 Changed things up here. First I find the lowest common Multiple of all Primes.
 Using that Number as a base, I brute force until I find the LCM of all numbers.
 
-I'm not sure if it would be faster to check only the non prime numbers.
-
+There is a few better ways to do it, I found this the easiest to write.
 */
 
 #include <iostream>
