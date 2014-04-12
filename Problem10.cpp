@@ -21,7 +21,7 @@ int main(){
         }
     }
 //This simply add's all the prime numbers
-    long long total = 2; //Initilize this as two since we will be skipping the prime 2 in the loop.
+    long long total = 2; //Initilize this as 2 since we will be skipping the prime 2 in the loop.
     for(int c = 1; c < primes.size(); c +=2){
         if(primes[c] == true)
             total +=c;
