@@ -21,8 +21,8 @@ int main(){
         }
     }
 //This simply add's all the prime numbers
-    long long total = 0;
-    for(int c = 1; c < primes.size(); c++){
+    long long total = 2;
+    for(int c = 1; c < primes.size(); c +=2){
         if(primes[c] == true)
             total +=c;
     }
