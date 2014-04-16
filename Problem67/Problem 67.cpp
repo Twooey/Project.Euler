@@ -45,14 +45,11 @@ int main(){
             if(grid[a][b] > grid[a][b+1]){
                 grid[a-1][b] += grid[a][b];
             }
-            else
+            else{
                 grid[a-1][b] += grid[a][b+1];
+			}
         }
     }
 	//Our answer
     std::cout << grid[0][0];
 }
-
-
-
-
