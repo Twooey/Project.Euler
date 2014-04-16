@@ -10,7 +10,7 @@ std::vector<int> split(std::string line){
     std::stringstream ss (line);
     std::vector<int> result;
     std::string num;
-    while(std::getline(ss, num, ','))
+    while(std::getline(ss, num, ' '))
         result.push_back(std::stoi(num));
     return result;
 }
