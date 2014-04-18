@@ -21,7 +21,6 @@ int main(){
             bigNum[b] *= 2;
             int tempCarry = carry; //Need to be able to set new carrys
 
-
             if(bigNum[b] < 10){
                 carry = 0;
             }
