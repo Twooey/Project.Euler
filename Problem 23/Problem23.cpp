@@ -1,46 +1,47 @@
 #include <iostream>
 #include <vector>
 
-
-void Divisors(int number, std::vector<int> &result){
-    for(int a = 1; a*a < number; a++){
+//Calculates divisors
+void Divisors(unsigned number, std::vector<unsigned> &result){
+    for(unsigned a = 1; a < number; a++){
         if(number % a == 0){
             result.push_back(a);
-            result.push_back(number/a);
         }
     }
 }
-
-int SumOfDivisors(int number){
-    int result = 0;
-    std::vector<int> divisors;
+//Calls for divisors and adds them
+unsigned SumOfDivisors(unsigned number){
+    unsigned result = 0;
+    std::vector<unsigned> divisors;
     Divisors(number, divisors);
-    for(int a = 0; a < divisors.size(); a++){
+    for(unsigned a = 0; a < divisors.size(); a++){
         if(divisors[a] < number)
             result += divisors[a];
     }
     return result;
 }
-
-bool IsAbundant(int number){
-    if(SumOfDivisors(number) < number){
-        return false;
-    }
+//Calls calculates the sum of divisors to see if it is Abundant
+bool IsAbundant(unsigned number){
     if(SumOfDivisors(number)> number){
         return true;
     }
+    else{
+        return false;
+    }
 }
-
-void Abundant(int limit, std::vector<int> &abunNumbers){
-    for(int a = 1; a < limit; a++){
-        if(IsAbundant(a) == true){
+//pushes back abundant numbers
+void Abundant(unsigned limit, std::vector<unsigned> &abunNumbers){
+    for(unsigned a = 1; a < limit; a++){
+        if(IsAbundant(a)){
             abunNumbers.push_back(a);
         }
     }
 }
-void SumOfAbundant(int limit, std::vector<int> const& abunNumbers, std::vector<bool> &sumAbun){
-    for(int a = 0; a < abunNumbers.size()-1; a++){
-        for(int b = a; b < abunNumbers.size()-1; b++){
+
+//Find's all number's that are the sum of two abundant numbers
+void SumOfAbundant(unsigned limit, std::vector<unsigned> const& abunNumbers, std::vector<bool> &sumAbun){
+    for(unsigned a = 0; a < abunNumbers.size(); a++){
+        for(unsigned b = a; b < abunNumbers.size(); b++){
             if(abunNumbers[a]+abunNumbers[b] <= limit){
                 sumAbun[abunNumbers[a]+abunNumbers[b]] = true;
             }
@@ -52,21 +53,19 @@ void SumOfAbundant(int limit, std::vector<int> const& abunNumbers, std::vector<b
 }
 
 int main(){
-    unsigned limit = 28123;
-    unsigned long long result = 0;
+    const unsigned limit = 28123;
+    unsigned result = 0;
 
-    std::vector<int>abunNumbers;
+    std::vector<unsigned>abunNumbers;
     Abundant(limit, abunNumbers);
 
     std::vector<bool>sumAbun(limit,false);
     SumOfAbundant(limit, abunNumbers, sumAbun);
 
 
-    for(int a = 0 ; a < sumAbun.size() ; a++){
+    for(unsigned a = 0 ; a < sumAbun.size() ; a++){
         if(!sumAbun[a]){
         result += a;
-      std::cout << result << " \n";
-
         }
     }
     std::cout << result;
