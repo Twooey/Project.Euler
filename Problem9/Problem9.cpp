@@ -15,7 +15,7 @@ Find the product abc.
 int main(){
 
     int a = 0, b = 0, c = 0;
-    int s = 1000;
+    const int s = 1000;
     bool found = false;
 
 /* This For loop tests for a + b + c = 1000. When it finds a situation where that is  true,
