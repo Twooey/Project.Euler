@@ -9,15 +9,15 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 #include <iostream>
 
-unsigned Multiples(unsigned number, unsigned max){
+unsigned Multiples(const unsigned number, const unsigned max){
 	return number*(max/number) * ((max/number)+1)/2;
 }
 
 int main(){
-	unsigned sum3 = 3;
-	unsigned sum5 = 5;
-	unsigned sum15 = 15;
-	unsigned max = 999;
+	cosnt unsigned sum3 = 3;
+	const unsigned sum5 = 5;
+	const unsigned sum15 = 15;
+	const unsigned max = 999;
 	unsigned result = 0;
 	
 	result = Multiples(sum3, max) + Multiples(sum5, max) - Multiples(sum15, max);
