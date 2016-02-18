@@ -14,7 +14,7 @@ unsigned Multiples(const unsigned number, const unsigned max){
 }
 
 int main(){
-	cosnt unsigned sum3 = 3;
+	const unsigned sum3 = 3;
 	const unsigned sum5 = 5;
 	const unsigned sum15 = 15;
 	const unsigned max = 999;
